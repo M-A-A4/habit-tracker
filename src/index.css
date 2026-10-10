@@ -1,0 +1,249 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #181818;
+  color: #f5f5f5;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 70px 24px;
+  background: #181818;
+}
+
+.container {
+  max-width: 710px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.top-row h1 {
+  font-size: 34px;
+  margin: 0 0 7px;
+}
+
+.muted {
+  color: #a1a1aa;
+  font-size: 15px;
+  margin: 0;
+}
+
+.week-navigation {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.week-label {
+  margin-bottom: 9px;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  color: white;
+  background: #791cff;
+  transition: background 0.2s;
+}
+
+.button:hover:not(:disabled) {
+  background: #933bff;
+}
+
+.button-secondary {
+  background: #303034;
+}
+
+.add-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.add-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 16px;
+  border: 1px solid #292929;
+  border-radius: 9px;
+  background: #272727;
+  color: white;
+  outline: none;
+}
+
+.add-form input:focus {
+  border-color: #791cff;
+}
+
+.add-form input::placeholder {
+  color: #999;
+}
+
+.habit-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.habit-card {
+  padding: 20px 17px 16px;
+  border: 1px solid #292929;
+  border-radius: 15px;
+  background: #242424;
+  box-shadow: 0 4px 12px #00000012;
+}
+
+.habit-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.habit-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.habit-title h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.streak {
+  color: #eab85c;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.delete-button {
+  border: none;
+  background: transparent;
+  color: #d34d63;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.delete-button:hover {
+  color: #ff647b;
+}
+
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.day-button {
+  min-width: 0;
+  min-height: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: #303034;
+  color: #a1a1aa;
+  font-size: 12px;
+}
+
+.day-button:hover {
+  border-color: #9747ff;
+}
+
+.day-done {
+  background: #791cff;
+  color: white;
+}
+
+.day-today {
+  border: 2px solid #b58aff;
+}
+
+.empty-message {
+  padding: 30px;
+  text-align: center;
+  color: #a1a1aa;
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 35px 14px;
+  }
+
+  .top-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .week-navigation {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .week-label {
+    margin: 0;
+  }
+
+  .top-row h1 {
+    font-size: 30px;
+  }
+
+  .habit-card {
+    padding: 15px 10px;
+  }
+
+  .days-grid {
+    gap: 4px;
+  }
+
+  .day-button {
+    min-height: 44px;
+    font-size: 11px;
+  }
+}
