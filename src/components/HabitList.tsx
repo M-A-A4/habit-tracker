@@ -1,6 +1,6 @@
 
 import type { Habit } from "../context/HabitProvider";
-import Button from "./Button";
+
 
 type HabitListProps = {
   habits: Habit[];
